@@ -15,7 +15,7 @@ Este projeto tem por objetivo verificar o conhecimento teórico do candidato apl
 * Raciocinio lógico-matemático
 * Java8 LocalTime API
 * Conceitos de RESTFull API
-* Conseitos de banco de dados
+* Conceitos de banco de dados
 
 ## Instruções para Execução do Projeto ##
 
@@ -23,7 +23,7 @@ Este projeto tem por objetivo verificar o conhecimento teórico do candidato apl
 1. Configure o projeto para ser manipulado via Eclipse usando o Gradle;
 1. Instale as dependências do Bower;
 1. Implemente o que é solicitado na sessão "Hora da Prática";
-1. Ao terminar suas implementações e testes, commit todo o seu codigo na MASTER do seu repositório e passe uma TAG com o nome: "**entrega-final**";
+1. Ao terminar suas implementações e testes, commit todo o seu código na MASTER do seu repositório e passe uma TAG com o nome: "**entrega-final**";
 1. Mande-nos um e-mail com os seguintes dados:
 
                - PARA: selecao.nti@ufpe.br
