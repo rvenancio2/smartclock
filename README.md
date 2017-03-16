@@ -40,4 +40,4 @@ Este projeto tem por objetivo verificar o conhecimento teórico do candidato apl
 * Estude seu código entregue para, se classificado para a fase de entrevista, responder algumas perguntas.
 
 #Hora da Prática#
-Acesse as questões pelo [link](Link URL)
+Acesse as questões pelo [link](https://drive.google.com/open?id=0BzdQKlRCjoZhZGh2dEE1MG5zX3c)
