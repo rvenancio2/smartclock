@@ -37,7 +37,7 @@ Este projeto tem por objetivo verificar o conhecimento teórico do candidato apl
 
 * Tenha sempre em mente que seu código vai ser avaliado por uma outra pessoa;
 * Escreva seu código de modo que se orgulhe dele a ponto de ser exposto como uma obra de arte;
-* Estude seu código entregue para, se classificado para a fase de entrevista, responder algumas perguntas.
+* Estude seu código entregue para responder algumas perguntas na fase de entrevistas.
 
 #Hora da Prática#
 Acesse as questões pelo [link](https://drive.google.com/open?id=0BzdQKlRCjoZhZGh2dEE1MG5zX3c)
