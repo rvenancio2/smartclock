@@ -39,5 +39,5 @@ Este projeto tem por objetivo verificar o conhecimento teórico do candidato apl
 * Escreva seu código de modo que se orgulhe dele a ponto de ser exposto como uma obra de arte;
 * Estude seu código entregue para responder algumas perguntas na fase de entrevistas.
 
-#Hora da Prática#
+### Hora da Prática ###
 Acesse as questões pelo [link](https://drive.google.com/open?id=0BzdQKlRCjoZhZGh2dEE1MG5zX3c)
