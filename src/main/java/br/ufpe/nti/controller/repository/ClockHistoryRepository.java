@@ -19,6 +19,7 @@ public class ClockHistoryRepository {
 
 	public List<Clock> listAll() {
 		return em.createQuery("SELECT c FROM Clock c", Clock.class).getResultList();
+		//commit test
 	}
 
 	@Transactional
