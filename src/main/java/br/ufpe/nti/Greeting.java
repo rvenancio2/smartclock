@@ -1,6 +1,8 @@
 package br.ufpe.nti;
 
 public class Greeting {
+	
+	
 
     private final long id;
     private final String content;
