@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import br.ufpe.nti.model.Clock;
 
 @Repository
-@Transactional(readOnly = true)
+@Transactional(readOnly = false)
 public class ClockHistoryRepository {
 
 	@PersistenceContext
@@ -24,7 +24,9 @@ public class ClockHistoryRepository {
 
 	@Transactional
 	public Clock save(Clock c) {
+		em.getTransaction().begin();
 		em.persist(c);
+		em.getTransaction().commit();		
 		return c;
 	}
 

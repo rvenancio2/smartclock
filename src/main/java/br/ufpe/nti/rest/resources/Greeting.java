@@ -1,4 +1,4 @@
-package br.ufpe.nti;
+package br.ufpe.nti.rest.resources;
 
 public class Greeting {
 	

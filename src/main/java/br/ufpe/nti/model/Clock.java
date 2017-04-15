@@ -31,6 +31,10 @@ public class Clock {
 	@Column(name = "CREATED_AT")
 	@JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss")
 	private Timestamp createdAt;
+	
+	@NotNull
+	@Column(name = "ANGLE")
+	private Double angle;
 
 	public Long getId() {
 		return id;
@@ -38,6 +42,14 @@ public class Clock {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public Double getAngle() {
+		return angle;
+	}
+
+	public void setAngle(Double angle) {
+		this.angle = angle;
 	}
 
 	public LocalTime getTime() {
