@@ -1,17 +1,13 @@
 package br.ufpe.nti.rest.resources;
 
-import java.io.InputStream;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,46 +29,49 @@ public class ClockResource {
 	private ClockHistoryRepository history;
 
 	// responde a questao 1 e 2
-	@RequestMapping(value = "clock", method = RequestMethod.GET)
+	@RequestMapping(value = "/clock", method = RequestMethod.GET)
 	@Produces(MediaType.APPLICATION_JSON)
-	public @ResponseBody Response getClock(@RequestParam("hour") String hour) {
+	public @ResponseBody Clock getClock() {
 
-		Clock c = createClockByHour(hour);
-		return Response.status(200).entity(c).build();
+		Date d = new Date(System.currentTimeMillis());
+		@SuppressWarnings("deprecation")
+		String s = d.getHours() + ":" + d.getMinutes();
+		Clock clock = createClockByHour(s);
+		return clock;
 	}
 
 	// Responde a questao 3, 4 e 5
-	@RequestMapping(value = "clock", method = RequestMethod.POST)
-	public @ResponseBody Response postClock(@RequestParam("time") String hour) {
-		Clock c = createClockByHour(hour);
-		history.save(c);
-		return Response.status(200).entity(c).build();
+	@RequestMapping(value = "/clock", method = RequestMethod.POST)
+	public @ResponseBody Clock postClock(@RequestParam("time") String hour) {
+		Clock clock = createClockByHour(hour);
+		history.save(clock);
+		return clock;
 	}
 
 	// Responde a questao 6 e 7
 	@RequestMapping(value = "/clockhistory", method = RequestMethod.GET)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getClocks() {
+	public List<Clock> getClocks() {
 		List<Clock> all = history.listAll();
-		return Response.status(200).entity(all).build();
+		return all;
 	}
 
 	// Responde a questao 8 e 9
 	@RequestMapping(value = "/clockhistoy/{idHistoryClock}", method = RequestMethod.GET)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getClockById(@PathVariable("id") Long id) {
+	public Clock getClockById(@PathVariable("id") Long id) {
 		Clock find = history.find(id);
-		return Response.status(200).entity(find).build();
-	}
-	
-	@GET
-	@Path("/verify")
-	@Produces(MediaType.TEXT_PLAIN)
-	public Response verifyRESTService(InputStream incomingData) {
-		String result = "RESTService Successfully started..";
-		return Response.status(200).entity(result).build();
+		return find;
 	}
 
+	
+	
+	@RequestMapping(value = "/verify", method = RequestMethod.GET)
+	@Produces(MediaType.TEXT_PLAIN)
+	public String verifyRESTService() {
+		String result = "RESTService Successfully started..";
+		return result;
+	}
 
 	private Clock createClockByHour(String hour) {
 		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
