@@ -11,22 +11,31 @@ import org.springframework.transaction.annotation.Transactional;
 import br.ufpe.nti.model.Clock;
 
 @Repository
-@Transactional(readOnly = false)
 public class ClockHistoryRepository {
 
 	@PersistenceContext
 	private EntityManager em;
 
+	public ClockHistoryRepository() {
+
+	}
+
+	@PersistenceContext
+	public void setEntityManager(EntityManager entityManager) {
+		this.em = entityManager;
+	}
+
+	public Clock find(Long id) {
+		return em.find(Clock.class, id);
+	}
+
 	public List<Clock> listAll() {
 		return em.createQuery("SELECT c FROM Clock c", Clock.class).getResultList();
-		//commit test
 	}
 
 	@Transactional
 	public Clock save(Clock c) {
-		em.getTransaction().begin();
 		em.persist(c);
-		em.getTransaction().commit();		
 		return c;
 	}
 
